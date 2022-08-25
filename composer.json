@@ -1,0 +1,42 @@
+{
+	"name": "ommu/yii2-centrifugo",
+	"description": "Yii2 Centrifugo WebSocket",
+	"type": "yii2-extension",
+	"keywords": [
+		"extension",
+		"centrifugo",
+		"socket",
+		"websocket",
+		"ommu",
+		"ommu-platform",
+		"yii2"
+	],
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/ommu/yii2-centrifugo",
+	"support": {
+		"issues": "https://github.com/ommu/yii2-centrifugo/issues",
+		"wiki": "https://github.com/ommu/yii2-centrifugo/wiki",
+		"source": "https://github.com/ommu/yii2-centrifugo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ommu/yii2-centrifugo.git"
+	},
+	"authors": [
+		{
+			"name": "Putra Sudaryanto",
+			"email": "putra@ommu.id",
+			"homepage": "https://ommu.id",
+			"role": "Creator"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"centrifugal/phpcent": "~4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"ommu\\centrifugo\\": ""
+		}
+	}
+}
