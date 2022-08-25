@@ -32,7 +32,8 @@
 	],
 	"minimum-stability": "dev",
 	"require": {
-		"centrifugal/phpcent": "~4.0"
+		"centrifugal/phpcent": "~4.0",
+        "npm-asset/centrifuge": "~3.0"
 	},
 	"autoload": {
 		"psr-4": {
