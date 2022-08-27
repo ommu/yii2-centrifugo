@@ -24,6 +24,10 @@ class Broadcaster extends Model
 	 * {@inheritdoc}
 	 */
     protected $secret;
+	/**
+	 * {@inheritdoc}
+	 */
+    protected $enable = false;
 
 	/**
 	 * {@inheritdoc}
@@ -39,6 +43,22 @@ class Broadcaster extends Model
     public function setApikey(string $value): void
     {
         $this->apiKey = $value;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setEnable($value)
+    {
+        $this->enable = $value;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function isEnable(): bool
+    {
+        return $this->enable;
     }
 
 	/**
@@ -62,6 +82,19 @@ class Broadcaster extends Model
     {
         $this->connect();
         return self::$client;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getToken($userId, $time = null)
+    {
+        if ($time == null) {
+            $time = time() + (60 * 60);
+        }
+        $token = $this->getClient()->setSecret($this->secret)->generateConnectionToken($userId, $time);
+        return $token;
+
     }
 
 	/**
